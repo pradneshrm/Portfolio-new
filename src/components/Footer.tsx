@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrintModal }) => {
               <li><a href="#architecture-lab" className="hover:text-teal-300 transition">Selected Case Studies</a></li>
               <li><a href="#certifications-awards" className="hover:text-teal-300 transition">Certifications & Awards</a></li>
               <li><a href="#education" className="hover:text-teal-300 transition">Education</a></li>
-              
+              <li><a href="#documents" className="hover:text-teal-300 transition">Documents</a></li>
               <li><a href="#contact" className="hover:text-teal-300 transition">Contact</a></li>
             </ul>
           </div>

@@ -5,19 +5,19 @@ const documents = [
   {
     title: 'Resume',
     description: 'Healthcare Data & Analytics resume.',
-    href: '/Portfolio-new/documents/resume.pdf',
+    href: '/pradnesh-mohite-portfolio/documents/resume.pdf',
     event: 'resume_click' as const,
   },
   {
     title: 'Cover Letter',
     description: 'General professional cover letter.',
-    href: '/Portfolio-new/documents/cover-letter.pdf',
+    href: '/pradnesh-mohite-portfolio/documents/cover-letter.pdf',
     event: 'cover_letter_click' as const,
   },
   {
     title: 'Letter of Recommendation',
     description: 'Professional recommendation from a former manager.',
-    href: '/Portfolio-new/documents/lor-manager-1.pdf',
+    href: '/pradnesh-mohite-portfolio/documents/lor-manager-1.pdf',
     event: 'lor_click' as const,
   },
 ];

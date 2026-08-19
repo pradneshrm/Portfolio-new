@@ -10,7 +10,7 @@ import { CertificationsAwardsSection } from './components/CertificationsAwardsSe
 import { EducationSection } from './components/EducationSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { PrintResumeModal } from './components/PrintResumeModal';
+#import { PrintResumeModal } from './components/PrintResumeModal';
 import CareerDocuments from './components/CareerDocuments';
 import PortfolioAnalyticsSetup from './components/PortfolioAnalyticsSetup';
 import AnalyticsNotice from './components/AnalyticsNotice';

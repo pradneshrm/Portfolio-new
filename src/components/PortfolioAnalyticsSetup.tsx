@@ -11,7 +11,7 @@ const MEASUREMENT_ID = 'G-E4V2RCZCHM';
 export default function PortfolioAnalyticsSetup() {
   useEffect(() => {
     if (
-      MEASUREMENT_ID === 'G-XXXXXXXXXX' ||
+      MEASUREMENT_ID === 'G-E4V2RCZCHM' ||
       document.querySelector('script[data-portfolio-ga4="true"]')
     ) {
       return;

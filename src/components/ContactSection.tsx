@@ -17,6 +17,14 @@ import {
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
 
+/**
+ * Formspree endpoint (https://formspree.io). Sign up free, create a form
+ * pointed at your inbox email, and paste its endpoint ID below in place of
+ * 'YOUR_FORM_ID'. This lets the form send real email directly from the
+ * static site, with no backend server required.
+ */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 export const ContactSection: React.FC = () => {
   const [copiedType, setCopiedType] = useState<string | null>(null);
   
@@ -27,6 +35,8 @@ export const ContactSection: React.FC = () => {
   const [inquiryType, setInquiryType] = useState('Senior Healthcare Data Engineering Role');
   const [customNotes, setCustomNotes] = useState('');
   const [isSent, setIsSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -57,16 +67,42 @@ export const ContactSection: React.FC = () => {
     setCustomNotes(tpl.defaultText);
   };
 
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`[Inquiry] ${inquiryType} - from ${senderName || 'Hiring Lead'}`);
-    const body = encodeURIComponent(
-      `Hello Pradnesh,\n\nName: ${senderName}\nOrganization: ${senderOrg}\nReply Email: ${senderEmail}\nInquiry Type: ${inquiryType}\n\nMessage:\n${customNotes}\n\nSent via your portfolio website.`
-    );
-    window.location.href = `mailto:${PORTFOLIO_DATA.personal.email}?subject=${subject}&body=${body}`;
-    trackPortfolioEvent('contact_click', { inquiry_type: inquiryType });
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 5000);
+    setSendError(null);
+    setIsSending(true);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: senderName,
+          organization: senderOrg,
+          email: senderEmail,
+          inquiryType,
+          message: customNotes,
+          _subject: `[Portfolio Inquiry] ${inquiryType} - from ${senderName || 'Hiring Lead'}`,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      trackPortfolioEvent('contact_click', { inquiry_type: inquiryType });
+      setIsSent(true);
+      setSenderName('');
+      setSenderOrg('');
+      setSenderEmail('');
+      setCustomNotes('');
+      setTimeout(() => setIsSent(false), 5000);
+    } catch {
+      setSendError(
+        "Something went wrong sending your message. Please try again, or email me directly at " +
+          PORTFOLIO_DATA.personal.email
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -165,7 +201,7 @@ export const ContactSection: React.FC = () => {
                   Quick Inquiry & Message Dispatcher
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
-                  Select a template or compose a direct message. Submitting opens your email client pre-populated with your details.
+                  Select a template or compose a direct message. Submitting sends it straight to my inbox — no email app required.
                 </p>
               </div>
 
@@ -254,17 +290,24 @@ export const ContactSection: React.FC = () => {
                 <button
                   id="contact-submit-btn"
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-teal-900/40 flex items-center justify-center gap-2 transition"
+                  disabled={isSending}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-teal-900/40 flex items-center justify-center gap-2 transition"
                 >
                   <Send className="w-4 h-4 fill-slate-950" />
-                  <span>Send Direct Email to Pradnesh</span>
+                  <span>{isSending ? 'Sending…' : 'Send Message'}</span>
                 </button>
               </form>
 
               {isSent && (
                 <div className="p-3 rounded-xl bg-emerald-500/20 border border-emerald-600/40 dark:border-emerald-500/40 text-xs text-emerald-700 dark:text-emerald-300 flex items-center gap-2 animate-fade-in">
                   <Check className="w-4 h-4" />
-                  <span>Your email client has been opened with your inquiry prepared!</span>
+                  <span>Message sent! I'll get back to you soon.</span>
+                </div>
+              )}
+
+              {sendError && (
+                <div className="p-3 rounded-xl bg-red-500/20 border border-red-600/40 dark:border-red-500/40 text-xs text-red-700 dark:text-red-300 flex items-center gap-2 animate-fade-in">
+                  <span>{sendError}</span>
                 </div>
               )}
             </div>

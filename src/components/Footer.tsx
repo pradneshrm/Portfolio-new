@@ -7,6 +7,7 @@ import {
   FileText
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
 
 interface FooterProps {
   onOpenPrintModal: () => void;
@@ -58,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrintModal }) => {
               <li><a href="#architecture-lab" className="hover:text-teal-300 transition">Selected Case Studies</a></li>
               <li><a href="#certifications-awards" className="hover:text-teal-300 transition">Certifications & Awards</a></li>
               <li><a href="#education" className="hover:text-teal-300 transition">Education</a></li>
-              <li><a href="#documents" className="hover:text-teal-300 transition">Documents</a></li>
+              
               <li><a href="#contact" className="hover:text-teal-300 transition">Contact</a></li>
             </ul>
           </div>
@@ -73,6 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrintModal }) => {
                 <a 
                   id="footer-email-link"
                   href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+                  onClick={() => trackPortfolioEvent('email_click')}
                   className="flex items-center gap-2 hover:text-teal-300 transition break-all"
                 >
                   <Mail className="w-3.5 h-3.5 text-teal-400" />
@@ -85,6 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrintModal }) => {
                   href={PORTFOLIO_DATA.personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackPortfolioEvent('linkedin_click')}
                   className="flex items-center gap-2 hover:text-[#38bdf8] transition"
                 >
                   <Linkedin className="w-3.5 h-3.5 text-[#0077b5]" />

@@ -15,6 +15,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
 
 export const ContactSection: React.FC = () => {
   const [copiedType, setCopiedType] = useState<string | null>(null);
@@ -63,6 +64,7 @@ export const ContactSection: React.FC = () => {
       `Hello Pradnesh,\n\nName: ${senderName}\nOrganization: ${senderOrg}\nReply Email: ${senderEmail}\nInquiry Type: ${inquiryType}\n\nMessage:\n${customNotes}\n\nSent via your portfolio website.`
     );
     window.location.href = `mailto:${PORTFOLIO_DATA.personal.email}?subject=${subject}&body=${body}`;
+    trackPortfolioEvent('contact_click', { inquiry_type: inquiryType });
     setIsSent(true);
     setTimeout(() => setIsSent(false), 5000);
   };
@@ -104,6 +106,7 @@ export const ContactSection: React.FC = () => {
               <a
                 id="contact-email-direct-link"
                 href={`mailto:${PORTFOLIO_DATA.personal.email}?subject=Healthcare%20Data%20Engineering%20Opportunity`}
+                onClick={() => trackPortfolioEvent('email_click')}
                 className="text-base sm:text-lg font-mono font-bold text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition flex items-center gap-2 break-all"
               >
                 <span>{PORTFOLIO_DATA.personal.email}</span>
@@ -125,6 +128,7 @@ export const ContactSection: React.FC = () => {
                   href={PORTFOLIO_DATA.personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackPortfolioEvent('linkedin_click')}
                   className="px-2.5 py-1 rounded-lg bg-[#0077b5]/20 hover:bg-teal-500/10 text-teal-300 text-xs font-medium border border-teal-500/30 transition flex items-center gap-1"
                 >
                   <span>Connect</span>

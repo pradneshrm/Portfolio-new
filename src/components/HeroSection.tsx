@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Download, Linkedin, Mail, MapPin } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
 
 interface HeroSectionProps { onOpenPrintModal: () => void; }
 
@@ -29,8 +30,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPrintModal }) =>
 
           <div className="flex flex-wrap gap-2.5 mt-7 text-xs">
             <span className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300"><MapPin className="w-3.5 h-3.5 text-teal-400" /> India</span>
-            <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-teal-500/40 hover:text-white transition"><Mail className="w-3.5 h-3.5 text-teal-400" /> Email me</a>
-            <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-teal-500/40 hover:text-white transition"><Linkedin className="w-3.5 h-3.5 text-teal-400" /> LinkedIn</a>
+            <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} onClick={() => trackPortfolioEvent('email_click')} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-teal-500/40 hover:text-white transition"><Mail className="w-3.5 h-3.5 text-teal-400" /> Email me</a>
+            <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" onClick={() => trackPortfolioEvent('linkedin_click')} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-teal-500/40 hover:text-white transition"><Linkedin className="w-3.5 h-3.5 text-teal-400" /> LinkedIn</a>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 mt-8">

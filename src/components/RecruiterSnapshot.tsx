@@ -1,6 +1,7 @@
 import React from 'react';
 import { BriefcaseBusiness, Database, BarChart3, Code2, Cloud, MapPin, ArrowUpRight } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
 
 export const RecruiterSnapshot: React.FC = () => {
   const items = [
@@ -20,7 +21,7 @@ export const RecruiterSnapshot: React.FC = () => {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-400 mb-2">Recruiter Snapshot</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">A 10-second view of what I bring.</h2>
           </div>
-          <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-300 hover:text-teal-200 transition">
+          <a href={PORTFOLIO_DATA.personal.linkedin} target="_blank" rel="noopener noreferrer" onClick={() => trackPortfolioEvent('linkedin_click')} className="inline-flex items-center gap-2 text-sm font-semibold text-teal-300 hover:text-teal-200 transition">
             Verify my professional profile <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>

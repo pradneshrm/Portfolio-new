@@ -57,6 +57,11 @@ export default function CareerDocuments() {
             </a>
           ))}
         </div>
+
+        <p className="mt-6 text-xs opacity-50">
+          Publish recommendation letters only with the author&apos;s permission
+          and after redacting confidential or unnecessary personal information.
+        </p>
       </div>
     </section>
   );

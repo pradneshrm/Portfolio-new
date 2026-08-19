@@ -10,7 +10,6 @@ import { CertificationsAwardsSection } from './components/CertificationsAwardsSe
 import { EducationSection } from './components/EducationSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { PrintResumeModal } from './components/PrintResumeModal';
 import CareerDocuments from './components/CareerDocuments';
 import PortfolioAnalyticsSetup from './components/PortfolioAnalyticsSetup';
 import AnalyticsNotice from './components/AnalyticsNotice';
@@ -51,11 +50,6 @@ export default function App() {
           onOpenPrintModal={() => setPrintModalOpen(true)}
         />
 
-        {/* ATS-Formatted Print / Save Resume Modal */}
-        <PrintResumeModal
-          isOpen={printModalOpen}
-          onClose={() => setPrintModalOpen(false)}
-        />
-      </div>
+             </div>
   );
 }

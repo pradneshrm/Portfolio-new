@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Database, Gauge, BarChart3, CheckCircle2 } from 'lucide-react';
+import { useViewTracking } from '../lib/useViewTracking';
 
 const cases = [
   {
@@ -28,8 +29,11 @@ const cases = [
   },
 ];
 
-export const CaseStudiesSection: React.FC = () => (
-  <section id="case-studies" className="py-20 bg-black relative">
+export const CaseStudiesSection: React.FC = () => {
+  const sectionRef = useViewTracking<HTMLElement>('case_study_view');
+
+  return (
+  <section id="case-studies" ref={sectionRef} className="py-20 bg-black relative">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider mb-3">
@@ -62,4 +66,5 @@ export const CaseStudiesSection: React.FC = () => (
       </div>
     </div>
   </section>
-);
+  );
+};

@@ -23,7 +23,7 @@ import { trackPortfolioEvent } from '../lib/portfolioAnalytics';
  * 'YOUR_FORM_ID'. This lets the form send real email directly from the
  * static site, with no backend server required.
  */
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xaewlgqz';
 
 export const ContactSection: React.FC = () => {
   const [copiedType, setCopiedType] = useState<string | null>(null);

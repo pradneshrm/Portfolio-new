@@ -56,7 +56,33 @@ export function trackPortfolioEvent(
       'portfolio_engagement_score',
       String(current + (points[eventName] || 0))
     );
+
+    // Per-event counts for this browser session, used by the visitor
+    // alert to report what actually happened during THIS visit (the
+    // engagement_score above accumulates across all past visits).
+    const key = `portfolio_session_${eventName}`;
+    const sessionCount = Number(window.sessionStorage.getItem(key) || '0');
+    window.sessionStorage.setItem(key, String(sessionCount + 1));
   } catch {
     // Analytics must never break the portfolio.
   }
+}
+
+/** Snapshot of this session's engagement, read back by the visitor alert. */
+export function getSessionEngagementSnapshot() {
+  const get = (name: PortfolioEventName) =>
+    Number(window.sessionStorage.getItem(`portfolio_session_${name}`) || '0');
+
+  return {
+    caseStudies: get('case_study_view'),
+    dashboards: get('dashboard_view'),
+    resumeClicked: get('resume_click') > 0,
+    coverLetterClicked: get('cover_letter_click') > 0,
+    lorClicked: get('lor_click') > 0,
+    linkedinClicked: get('linkedin_click') > 0,
+    contactClicked: get('contact_click') > 0 || get('email_click') > 0,
+    engagementScore: Number(
+      window.localStorage.getItem('portfolio_engagement_score') || '0'
+    ),
+  };
 }

@@ -4,7 +4,7 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const RecruiterSnapshot: React.FC = () => {
   const items = [
-    { label: 'Experience', value: '6.5+', detail: 'Years in US Healthcare IT', icon: BriefcaseBusiness },
+    { label: 'Experience', value: '8.5+', detail: 'Years in US Healthcare IT', icon: BriefcaseBusiness },
     { label: 'Core', value: 'SQL + ETL', detail: 'Data extraction & troubleshooting', icon: Database },
     { label: 'Analytics', value: 'Power BI + Tableau', detail: 'Dashboard & data storytelling', icon: BarChart3 },
     { label: 'Programming', value: 'Python', detail: 'Foundational data analysis', icon: Code2 },

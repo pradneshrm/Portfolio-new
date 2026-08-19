@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrintModal }) => {
               </span>
             </div>
             <p className="text-slate-400 max-w-md text-xs leading-relaxed">
-              Healthcare data and analytics professional with 6.5+ years in US healthcare IT, focused on SQL, data extraction, ETL, troubleshooting and analytics.
+              Healthcare data and analytics professional with 8.5+ years in US healthcare IT, focused on SQL, data extraction, ETL, troubleshooting and analytics.
             </p>
             <div className="flex items-center gap-3 pt-1">
               <button

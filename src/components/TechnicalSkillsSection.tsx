@@ -4,7 +4,7 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 const evidence: Record<string, string> = {
   databases: 'Hands-on SQL work across extraction, configuration, reporting, troubleshooting and query tuning.',
-  healthcare: '6.5+ years of US healthcare IT context across clinical applications, workflows and data.',
+  healthcare: '8.5+ years of US healthcare IT context across clinical applications, workflows and data.',
   data_eng: 'Experience connecting source data, transformation logic, validation and reporting outputs.',
   tools: 'Production troubleshooting, issue management and collaboration with engineering, QA and product teams.',
 };

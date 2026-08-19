@@ -1,0 +1,23 @@
+PORTFOLIO VISITOR ALERT
+
+Subject: [Portfolio] High-engagement visitor — {{country}} — {{engagement_score}}
+
+A visitor showed high engagement with the portfolio.
+
+Country/Region: {{country}} / {{region}}
+City: {{city}}
+Device: {{device}}
+Browser: {{browser}}
+Traffic source: {{source}}
+Landing page: {{landing_page}}
+
+Engagement:
+- Case studies viewed: {{case_studies}}
+- Dashboards viewed: {{dashboards}}
+- Resume clicked: {{resume_clicked}}
+- LinkedIn clicked: {{linkedin_clicked}}
+- Contact/email clicked: {{contact_clicked}}
+
+Engagement score: {{engagement_score}}
+
+Treat location/source as approximate analytics, not proof that the visitor is a recruiter. Do not include IP addresses or attempt to identify an individual visitor.

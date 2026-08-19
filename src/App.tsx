@@ -11,6 +11,9 @@ import { EducationSection } from './components/EducationSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { PrintResumeModal } from './components/PrintResumeModal';
+import CareerDocuments from './components/CareerDocuments';
+import PortfolioAnalyticsSetup from './components/PortfolioAnalyticsSetup';
+import AnalyticsNotice from './components/AnalyticsNotice';
 
 export default function App() {
   const [printModalOpen, setPrintModalOpen] = useState(false);

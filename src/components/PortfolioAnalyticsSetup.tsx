@@ -3,15 +3,16 @@ import { useEffect } from 'react';
 /**
  * Google Analytics 4.
  *
- * Replace G-XXXXXXXXXX with your real Measurement ID.
+ * Replace PLACEHOLDER_MEASUREMENT_ID with your real Measurement ID.
  * Until then, this component does nothing.
  */
+const PLACEHOLDER_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 const MEASUREMENT_ID = 'G-E4V2RCZCHM';
 
 export default function PortfolioAnalyticsSetup() {
   useEffect(() => {
     if (
-      MEASUREMENT_ID === 'G-E4V2RCZCHM' ||
+      MEASUREMENT_ID === PLACEHOLDER_MEASUREMENT_ID ||
       document.querySelector('script[data-portfolio-ga4="true"]')
     ) {
       return;

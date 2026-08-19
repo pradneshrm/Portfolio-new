@@ -21,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
     { label: 'Case Studies', href: '#case-studies' },
     { label: 'Skills', href: '#skills' },
     { label: 'Certifications', href: '#certifications-awards' },
+    { label: 'Documents', href: '#documents' },
     { label: 'Contact', href: '#contact' },
   ];
 

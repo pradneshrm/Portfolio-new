@@ -1,9 +1,13 @@
 # Career documents
 
-Put your real PDF files here with these exact names:
-- resume.pdf
-- cover-letter.pdf
-- lor-manager-1.pdf
-- lor-manager-2.pdf (optional)
+Put your actual PDFs in this folder using these exact names:
 
-Publish LORs only with the author's permission. Redact personal contact details, signatures, client information, and confidential material unless explicitly authorized.
+resume.pdf
+cover-letter.pdf
+lor-manager-1.pdf
+
+Optional:
+lor-manager-2.pdf
+
+Before publishing an LOR, get permission from the author and redact personal
+contact details and confidential/client information unless explicitly approved.

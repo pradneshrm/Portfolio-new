@@ -40,6 +40,8 @@ export default function App() {
           <CertificationsAwardsSection />
           
           <EducationSection />
+      <CareerDocuments />
+      <AnalyticsNotice />
           
           <ContactSection />
         </main>

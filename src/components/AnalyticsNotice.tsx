@@ -1,0 +1,2 @@
+import React from 'react';
+export default function AnalyticsNotice() { return <p className="mx-auto max-w-3xl px-6 py-4 text-center text-xs leading-5 opacity-50">This portfolio uses privacy-conscious analytics to understand aggregate site usage and improve the recruiter experience. No exact GPS location, IP address, or personally identifying visitor information is collected by the portfolio's custom tracking code.</p>; }

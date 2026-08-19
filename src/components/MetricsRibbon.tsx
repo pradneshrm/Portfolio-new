@@ -2,7 +2,7 @@ import React from 'react';
 import { BarChart3, Database, FileBarChart, ShieldCheck, Terminal, Wrench } from 'lucide-react';
 
 const metrics = [
-  { value: '6.5+', label: 'Years', detail: 'US healthcare IT experience', icon: ShieldCheck },
+  { value: '8.5+', label: 'Years', detail: 'US healthcare IT experience', icon: ShieldCheck },
   { value: 'SQL', label: 'Core strength', detail: 'T-SQL, SQL Server & troubleshooting', icon: Database },
   { value: 'ETL', label: 'Data focus', detail: 'Extraction, ingestion & data quality', icon: Terminal },
   { value: '100+', label: 'Reports', detail: 'Customized clinical reports/data views', icon: FileBarChart },

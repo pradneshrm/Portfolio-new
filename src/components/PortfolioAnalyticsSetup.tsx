@@ -6,7 +6,7 @@ import { useEffect } from 'react';
  * Replace G-XXXXXXXXXX with your real Measurement ID.
  * Until then, this component does nothing.
  */
-const MEASUREMENT_ID = 'G-XXXXXXXXXX';
+const MEASUREMENT_ID = 'G-E4V2RCZCHM';
 
 export default function PortfolioAnalyticsSetup() {
   useEffect(() => {

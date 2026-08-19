@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPrintModal }) =>
             Healthcare Data & Analytics Professional
           </h2>
           <p className="mt-5 text-base sm:text-lg text-slate-400 leading-relaxed max-w-3xl">
-            6.5+ years in US healthcare IT, combining hands-on SQL, data extraction, ETL troubleshooting and clinical application knowledge with growing expertise in Power BI, Tableau, Python, GCP and AI-driven analytics.
+            8.5+ years in US healthcare IT, combining hands-on SQL, data extraction, ETL troubleshooting and clinical application knowledge with growing expertise in Power BI, Tableau, Python, GCP and AI-driven analytics.
           </p>
 
           <div className="flex flex-wrap gap-2.5 mt-7 text-xs">
@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPrintModal }) =>
             <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Pradnesh Mohite" className="w-full h-full object-cover object-top" />
           </div>
           <div className="absolute -bottom-5 -left-5 rounded-2xl bg-slate-900 border border-slate-700 px-4 py-3 shadow-xl">
-            <div className="text-2xl font-extrabold text-white">6.5+</div>
+            <div className="text-2xl font-extrabold text-white">8.5+</div>
             <div className="text-[10px] uppercase tracking-wider font-bold text-teal-300">Years in healthcare IT</div>
           </div>
         </div>

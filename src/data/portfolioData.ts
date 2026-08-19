@@ -141,9 +141,9 @@ export const PORTFOLIO_DATA = {
     linkedin: "https://www.linkedin.com/in/pradnesh-mohite",
     linkedinDisplay: "linkedin.com/in/pradnesh-mohite",
     summary:
-      "Healthcare IT professional with 6.5+ years of experience working with US healthcare data, SQL, data extraction, ETL workflows, troubleshooting, and clinical applications. I bring a strong combination of healthcare domain knowledge and hands-on data engineering experience, with growing expertise in Power BI, Tableau, Python, GCP, and AI-driven analytics.",
+      "Healthcare IT professional with 8.5+ years of experience working with US healthcare data, SQL, data extraction, ETL workflows, troubleshooting, and clinical applications. I bring a strong combination of healthcare domain knowledge and hands-on data engineering experience, with growing expertise in Power BI, Tableau, Python, GCP, and AI-driven analytics.",
     stats: [
-      { id: "exp", value: "6.5+", label: "Years Experience", sublabel: "US Healthcare IT" },
+      { id: "exp", value: "8.5+", label: "Years Experience", sublabel: "US Healthcare IT" },
       { id: "sql", value: "SQL", label: "Core Strength", sublabel: "T-SQL & Data Troubleshooting" },
       { id: "data", value: "ETL", label: "Data Focus", sublabel: "Extraction & Data Quality" },
       { id: "bi", value: "BI + AI", label: "Growing Focus", sublabel: "Power BI, Tableau & Python" },
